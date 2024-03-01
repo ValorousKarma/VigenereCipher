@@ -55,6 +55,7 @@ legend = {
   25: 'z',
 }
 
+
 def encrypt(plain_text: str, key: str):
   cipher_text = str()
   key_ind = 0
@@ -77,6 +78,7 @@ def encrypt(plain_text: str, key: str):
 
   return cipher_text
 
+
 def decrypt(cipher_text: str, key: str):
   plain_text = str()
   key_ind = 0
@@ -98,3 +100,21 @@ def decrypt(cipher_text: str, key: str):
       plain_text += i
 
   return plain_text
+
+
+def main():
+  string = input('Input a string to be encrypted: ')
+  key = input('Input an encryption key: ')
+
+  print(f'String: {string}\nKey: {key}')
+
+  cipher = encrypt(string, key)
+
+  print(f'Encrypted text: {cipher}')
+
+  plain_text = decrypt(cipher, key)
+
+  print(f'Decrypted text: {plain_text}')
+
+
+main()
